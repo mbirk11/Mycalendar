@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row mb-4 align-items-center">
+    <div class="col">
+        <h2 class="fw-bold text-primary mb-0">{{ month_name }} {{ year }}</h2>
+        <p class="text-muted">Today is {{ day }} {{ month_name }}, {{ year }}</p>
+    </div>
+    <div class="col-auto">
+        <a href="#" class="btn btn-primary rounded-pill px-4 shadow-sm">+ New Event</a>
+    </div>
+</div>
+
+<div class="card shadow-sm border-0 rounded-4 overflow-hidden">
+    <div class="card-body p-0">
+        <!-- Calendar Header -->
+        <div class="row g-0 text-center fw-bold bg-light py-3 border-bottom text-muted">
+            <div class="col">Mon</div>
+            <div class="col">Tue</div>
+            <div class="col">Wed</div>
+            <div class="col">Thu</div>
+            <div class="col">Fri</div>
+            <div class="col">Sat</div>
+            <div class="col">Sun</div>
+        </div>
+
+        <!-- Calendar Grid -->
+        {% for week in month_days %}
+        <div class="row g-0 border-bottom" style="min-height: 120px;">
+            {% for d in week %}
+            <div class="col border-end p-2 {% if d == 0 %}bg-light opacity-50{% endif %} hover-bg-light transition-all">
+                {% if d != 0 %}
+                    <div class="d-flex justify-content-between">
+                        <span class="fw-semibold {% if d == day %}bg-primary text-white rounded-circle d-inline-block text-center{% endif %}" 
+                              style="width: 28px; height: 28px; line-height: 28px;">
+                            {{ d }}
+                        </span>
+                    </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Custom CSS for Calendar cells -->
+<style>
+    .hover-bg-light:hover { background-color: #f8f9fa; cursor: pointer; }
+    .transition-all { transition: all 0.2s ease; }
+    .col.border-end:last-child { border-right: none !important; }
+</style>
+{% endblock %}
+

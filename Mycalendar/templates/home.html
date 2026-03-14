@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row align-items-center mb-5" style="min-height: 50vh;">
+    <div class="col-lg-6 text-center text-lg-start">
+        <h1 class="display-3 fw-bold text-primary mb-3">Welcome to Mycalendar</h1>
+        <p class="lead text-muted mb-4">
+            The easiest way to schedule events, organize your day, and manage your time beautifully.
+        </p>
+        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-lg-start">
+            <a href="/calendar/" class="btn btn-primary btn-lg px-4 gap-3 rounded-pill shadow-sm">
+                My Calendar
+            </a>
+            <a href="/users/" class="btn btn-outline-secondary btn-lg px-4 rounded-pill">
+                Users
+            </a>
+        </div>
+    </div>
+    
+    <div class="col-lg-6 mt-5 mt-lg-0 text-center">
+        <!-- We can replace this generic illustration with an actual image later! -->
+        <div class="p-5 bg-white shadow-lg rounded-4 d-inline-block border border-light">
+            <div class="display-1 text-primary mb-3">📅</div>
+            <h3 class="h4 fw-bold">Never miss a date</h3>
+            <p class="text-muted small mb-0">Sync everything in one place</p>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+    <div class="col d-flex align-items-start">
+      <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3 rounded-3 p-3 text-primary bg-light">
+          🚀
+      </div>
+      <div>
+        <h3 class="fs-4 text-body-emphasis">Fast & Simple</h3>
+        <p>Built with efficiency in mind, managing your events is a breeze.</p>
+      </div>
+    </div>
+    <div class="col d-flex align-items-start">
+      <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3 rounded-3 p-3 text-primary bg-light">
+          🔒
+      </div>
+      <div>
+        <h3 class="fs-4 text-body-emphasis">Secure</h3>
+        <p>Your calendar data gets saved safely with built-in user authentication.</p>
+      </div>
+    </div>
+    <div class="col d-flex align-items-start">
+      <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3 rounded-3 p-3 text-primary bg-light">
+          🖌️
+      </div>
+      <div>
+        <h3 class="fs-4 text-body-emphasis">Beautiful Design</h3>
+        <p>A beautiful UI constructed with modern standards so it's a joy to look at.</p>
+      </div>
+    </div>
+  </div>
+{% endblock %}

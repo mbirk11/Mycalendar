@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-sm border-0 rounded-4">
+            <div class="card-body p-4 p-md-5">
+                <div class="text-center mb-4">
+                    <h2 class="fw-bold text-primary">Add a New Person</h2>
+                    <p class="text-muted">Fill out the form below to add a new person to the system.</p>
+                </div>
+                
+                <!-- Display the last added user's age -->
+                <div class="alert alert-info rounded-3 mb-4" role="alert">
+                    <i class="me-2">ℹ️</i> {{ age_text }}
+                </div>
+
+                <form method="POST" action="{% url 'users_index' %}">
+                    {% csrf_token %}
+                    
+                    <div class="mb-3">
+                        <label for="name" class="form-label fw-semibold">First Name (სახელი)</label>
+                        <input type="text" class="form-control form-control-lg" id="name" name="name" required >
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="surname" class="form-label fw-semibold">Last Name (გვარი)</label>
+                        <input type="text" class="form-control form-control-lg" id="surname" name="surname" required >
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="birth_date" class="form-label fw-semibold">Date of Birth (დაბადების თარიღი)</label>
+                        <input type="date" class="form-control form-control-lg" id="birth_date" name="birth_date" required>
+                    </div>
+                    
+                    <div class="d-grid mt-4">
+                        <button type="submit" class="btn btn-primary btn-lg rounded-pill shadow-sm">
+                            Add Person
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
